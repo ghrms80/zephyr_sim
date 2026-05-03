@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
-cd /workdir
+
+cd /workspaces/zephyr_sim
 
 if [ ! -d ".west" ]; then
-  west init -l app
+  west init -l .
   west update
 fi

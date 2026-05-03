@@ -1,11 +1,12 @@
 {
   "name": "Zephyr 4.4 Dev",
   "image": "zephyrprojectrtos/ci:v0.28.0",
+  "remoteUser": "vscode",
   "remoteEnv": {
     "LC_ALL": "C",
     "ZEPHYR_TOOLCHAIN_VARIANT": "zephyr"
   },
-  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "onCreateCommand": "bash /workspaces/zephyr_sim/.devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [

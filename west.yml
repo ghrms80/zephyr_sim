@@ -6,4 +6,4 @@ manifest:
       revision: v4.4.0
       import: true
   self:
-    path: app
+    path: .
