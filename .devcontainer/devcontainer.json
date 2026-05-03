@@ -1,7 +1,7 @@
 {
   "name": "Zephyr 4.4 Dev",
-  "image": "zephyrprojectrtos/ci:v0.28.0",
-  "remoteUser": "vscode",
+  "image": "zephyrprojectrtos/ci:v0.29.2",
+  "remoteUser": "user",
   "remoteEnv": {
     "LC_ALL": "C",
     "ZEPHYR_TOOLCHAIN_VARIANT": "zephyr"
