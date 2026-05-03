@@ -1,0 +1,20 @@
+name: Build Dev Container Image
+
+on:
+  push:
+    paths:
+      - '.devcontainer/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and push
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          docker build -f .devcontainer/Dockerfile -t ghcr.io/ghrms80/zephyr-sim:latest .
+          docker push ghcr.io/ghrms80/zephyr-sim:latest
