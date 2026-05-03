@@ -1,18 +1,24 @@
 {
   "name": "Zephyr 4.4 Dev",
-  "image": "ghcr.io/ghrms80/zephyr-sim:latest",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".." 
+  },
   "remoteUser": "user",
   "remoteEnv": {
     "LC_ALL": "C",
-    "ZEPHYR_TOOLCHAIN_VARIANT": "zephyr"
+    "ZEPHYR_TOOLCHAIN_VARIANT": "zephyr",
+    "ZEPHYR_BASE": "/workspaces/zephyr_sim/zephyr"
   },
-  "onCreateCommand": "bash /workspaces/zephyr_sim/.devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools"
+        "ms-vscode.cmake-tools",
+        "trond-snekvik.devicetree"
       ]
     }
-  }
+  },
+  // 컨테이너 생성 후 setup.sh를 실행하도록 설정
+  "postCreateCommand": "bash .devcontainer/setup.sh"
 }
