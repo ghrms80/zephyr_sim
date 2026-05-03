@@ -1,6 +1,6 @@
 {
   "name": "Zephyr 4.4 Dev",
-  "image": "zephyrprojectrtos/ci:v0.29.2",
+  "image": "ghcr.io/ghrms80/zephyr-sim:latest",
   "remoteUser": "user",
   "remoteEnv": {
     "LC_ALL": "C",
