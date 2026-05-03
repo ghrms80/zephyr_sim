@@ -1,13 +1,11 @@
 {
   "name": "Zephyr 4.4 Dev",
   "image": "zephyrprojectrtos/ci:v0.28.0",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workdir/app,type=bind",
-  "workspaceFolder": "/workdir",
   "remoteEnv": {
     "LC_ALL": "C",
     "ZEPHYR_TOOLCHAIN_VARIANT": "zephyr"
   },
-  "onCreateCommand": "bash /workdir/app/.devcontainer/setup.sh",
+  "onCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
       "extensions": [
